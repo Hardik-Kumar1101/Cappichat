@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="https://kit.fontawesome.com/42eae9eadc.js" crossorigin="anonymous"></script>
+    <!-- <script defer src="http://localhost:3000/socket.io/socket.io.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css"  />
+</head>
+<body>
+
+
+    <div class="form-popup" id="myForm">
+        <form action="#" class="form-container" id="formnames">
+          <h1>Join with CappiChat</h1>
+      
+          <label for="email"><b>Name</b></label>
+          <input type="text" placeholder="Enter name" id= "username"  required>
+      
+          <label for="psw"><b>Room ID</b></label>
+          <input type="text" placeholder="Enter Room Id" id = "roomId" >
+      
+          <button type="submit" class="btn"  >Enter</button>
+          
+        </form>
+      </div>
+
+
+    <div class="container">
+        <div class="chatContainer" id="chatContainer">
+            
+            <div class="chatHead">
+                <span id="romspn">Room: <span id="userId"></span></span>
+                <p></span> <span>&#128304;</span>CappiChat</p>
+                <p id="theme" onclick="change()">☀️</p>
+                <p class="usersCount">
+                    <i class="fa-solid fa-user"></i>
+                    <span id="onUsers">0</span>
+                </p>
+            </div>
+
+            <div class="chattings" id="chatting">
+            </div>
+            <form action="#" id="messageForm">
+                <input type="text" id="messageInput" placeholder="Enter your message" style="display:block;">
+                <button id="sendBtn">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
+    <script defer src="./client.js"></script>
+
+    <script type="text/javascript" >
+        $('#messageInput').emojioneArea({
+            pickerPosition: "top",
+        })
+
+        // remove the emojionearea div text 
+        $(document).ready(function() {
+            $("#sendBtn").click(function(e) {
+                $(".emojionearea-editor").text('');
+        })})
+       
+        function openForm() {
+        document.getElementById("myForm").style.display = "block";
+        }
+        openForm();
+        function change(){
+            document.getElementById("chatContainer").classList.toggle("darkmode");
+        }
+    </script>
+
+</body>
+</html>

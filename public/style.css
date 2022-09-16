@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: none;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to right, #021B79, #0575E6);
+}
+.container div{
+    color: white;
+    font-family: 'Poppins';
+}
+.chatContainer {
+    position: relative;
+    max-width: 555px;
+    background-color: white;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.65);
+    height: 85vh;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: column;
+}
+
+.darkmode {
+    background-color: #2E2E2E;
+}
+#theme{
+    cursor: pointer;
+}
+
+.chatHead{
+    width: 100%;
+    /* height: 5%; */
+    padding-bottom: 1%;
+    display: flex;
+    background-color: #0080ff;
+    justify-content: space-between;
+    align-items: center;
+}
+.chatHead #romspn{
+    margin-left: 5px;
+}
+.chatHead p{
+    margin: 10px auto;
+    text-align: center;
+    font-family: 'Poppins';
+    color: white;
+    font-weight: 500;
+}
+
+.usersCount{
+    color: white;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+}
+
+.usersCount span{
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    margin-left: 15px;
+}
+
+.usersCount i{
+    font-size: 14px;
+    position: fixed;
+    text-align: center;
+}
+
+
+#messageForm{
+    display:flex; 
+    max-width: 545px;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    /* background-color: green; */
+    margin: 5px 5px;
+    width: 100%;
+}
+
+#messageForm #messageInput{
+    width: 10%;
+    outline: none;
+    border: none;
+    padding: 8px 60px 8px 10px;
+    font-weight: 500;
+    font-family: 'Poppins';
+    border: 1px solid #0575E6;
+    color: rgb(16, 16, 16);
+}
+
+#sendBtn{
+    outline: none;
+    border: none;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* right: 10; */
+    /* transform: translateY(-50%); */
+    background-color: #0575E6;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: .3s;
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+
+#sendBtn:hover{
+    background-color: #0080ff;
+}
+
+
+.chattings{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    overflow-y: auto;
+    margin-bottom: 30px;
+}
+
+
+.chattings::-webkit-scrollbar{
+    width: 6px;
+}
+
+
+.chattings::-webkit-scrollbar-thumb{
+    width: 6px;
+    border-radius: 4px;
+    background-color: #0080ff;
+}
+
+
+.message{
+    font-family: 'Poppins';
+    max-width: 35%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 12px;
+    word-wrap: break-word;
+    padding: 8px 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+
+}
+
+.message span{
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.message p{
+    margin: 0;
+    margin-top: 2px;
+    font-size: 1rem;
+}
+
+.message i{
+    position: absolute;
+    bottom: -5px;
+    color: rgb(195, 1, 1);
+    font-size: 13px;
+    display: none;
+}
+
+.center{
+    align-self: center;
+    border-radius: 8px;
+    background-color: #0576e685;
+    color: rgb(16, 16, 16);
+    text-align: center;
+}
+
+.message.center p{
+    font-size: 12px;
+}
+
+.message.liked i{
+    display: flex;
+}
+
+.right{
+    background: rgba(21, 22, 23, 0.8);
+    color: red;
+    border-radius: 16px;
+    border-bottom-right-radius: 0;
+    align-self: flex-end;
+}
+
+.left{
+    background:linear-gradient(180deg ,#0080ff, rgba(6, 56, 136, 0.7));
+    border-radius: 16px;
+    color: white;
+    border-bottom-left-radius: 0;
+    align-self: flex-start;
+}
+
+.noAccess{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Poppins';
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+ /* Only Add When Needed */
+.serverFull{
+    position: absolute;
+    bottom: 0;
+    color: #0080ff;
+    display: none;
+    font-family: 'Poppins';
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+
+.serverFull.active{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+/* popup input css */
+.form-popup {
+    /* display: none; */
+    /* position: fixed; */
+    font-family: 'Poppins';
+    width: 300px;
+    margin: 10% auto;
+    border: 3px solid #f1f1f1;
+    /* z-index: 9; */
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 6%;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0px 22px 0px;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]{
+    background-color: #ddd;
+    outline: none;
+    width: 90%;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
